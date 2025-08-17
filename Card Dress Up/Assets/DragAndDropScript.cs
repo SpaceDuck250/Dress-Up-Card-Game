@@ -52,6 +52,11 @@ public class DragAndDropScript : MonoBehaviour
 
     public void OnRelease()
     {
+        if (SelectedObj != null)
+        {
+            SelectedObj.transform.position = SelectedObj.GetComponent<ClothesScript>().homeslot.transform.position;
+        }
+        
         SelectedObj = null;
     }
 }
